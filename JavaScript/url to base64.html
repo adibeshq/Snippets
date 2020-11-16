@@ -1,0 +1,53 @@
+<video id="video">
+</video>
+<button id="playBtn">Play</button>
+
+
+<script>
+    let video = document.getElementById('video');
+    let source = document.createElement('source');
+
+
+    document.getElementById('playBtn').addEventListener('click', () => {
+        console.log("thi");
+        video.play();
+    });
+
+    async function getBase64ImageFromUrl(imageUrl) {
+        let res = await fetch(imageUrl);
+        let blob = await res.blob();
+
+        return new Promise((resolve, reject) => {
+            var reader = new FileReader();
+            reader.addEventListener("load", function () {
+                resolve(reader.result);
+            }, false);
+
+            reader.onerror = () => {
+                return reject(this);
+            };
+            reader.readAsDataURL(blob);
+        })
+    }
+
+    const videoBase64 = localStorage.getItem('video');
+    console.log(videoBase64);
+    if (videoBase64 != null && videoBase64 != 'null') {
+        source.setAttribute('type', 'video/mp4');
+        source.setAttribute('src', videoBase64);
+        video.appendChild(source);
+    } else {
+        getBase64ImageFromUrl('https://three.scoopretail.com/images/dynamicImages/orig_vid5d404fcbc80a7.mp4')
+            .then(result => {
+                console.log(result);
+
+                localStorage.setItem('video', result);
+                source.setAttribute('type', 'video/mp4');
+                source.setAttribute('src', result);
+                video.appendChild(source);
+            })
+            .catch(err => console.error(err));
+    }
+</script>
+
+

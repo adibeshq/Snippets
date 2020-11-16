@@ -1,0 +1,2 @@
+ sudo launchctl load -w -- /Library/LaunchDaemons/org.custom.tilde-switch.plist
+
