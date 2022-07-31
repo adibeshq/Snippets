@@ -1,3 +1,6 @@
+* git clone --mirror: to clone every references (commits, tags, branches)
+* git push --mirror: to push everything
+
 ```
 git clone --mirror https://bitbucket.org/exampleuser/repository-to-mirror.git
 # Make a bare mirrored clone of the repository
