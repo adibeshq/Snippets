@@ -6,7 +6,7 @@ Replace `./files/ir` with `/usr/share/X11/xkb/symbols/ir`
 Edit the following file:
 
 ```
-sudo kate /usr/share/X11/xkb/keycodes/evdev
+kate /usr/share/X11/xkb/keycodes/evdev
 ```
 
 Set these codes like:
