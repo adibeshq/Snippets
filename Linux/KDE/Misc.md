@@ -8,3 +8,8 @@ remove the following files:
 /home/seraj/.config/kdeglobals
 /home/seraj/.config/kwinrc
 ```
+### Missing video thumnail
+
+```
+sudo pacman -S ffmpegthumbs
+```
