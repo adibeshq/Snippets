@@ -6,21 +6,22 @@ Replace `./files/ir` with `/usr/share/X11/xkb/symbols/ir`
 Edit the following file:
 
 ```
-kate /usr/share/X11/xkb/keycodes/evdev
+a
 ```
 
 Set these codes like:
 
 ```
-<LALT> = 133;
 <LCTL> = 64;
-<SPCE> = 65;
-<RCTL> = 108;
-<RALT> = 134;
-// Microsoft keyboard extra keys
 <LWIN> = 37;
+<LALT> = 133;
+<SPCE> = 65;
+<RALT> = 134;
+alias <ALGR> = <RALT>;
 <RWIN> = 105;
 <COMP> = 135;
+alias <MENU> = <COMP>;
+<RCTL> = 108;
 ```
 
 For finding the key codes install and run `xev`
