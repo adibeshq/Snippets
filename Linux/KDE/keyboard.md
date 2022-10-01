@@ -25,3 +25,19 @@ alias <MENU> = <COMP>;
 ```
 
 For finding the key codes install and run `xev`
+
+
+
+
+
+Shortcuts:
+
+Window one desktop to the left + right
+
+Window one desktop up+down
+
+
+
+Switch one desktop to the left+right
+
+Switch one desktop up+down 
