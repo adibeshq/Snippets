@@ -30,3 +30,18 @@ docker run hello-world
 
 You also need to install the `docker-compose` for easy running docker.
 
+---
+##  Docker domains to apply on firewall rules or routing
+https://auth.docker.io
+
+https://registry.docker.io
+
+https://registry-1.docker.io
+
+https://registry-2.docker.io
+
+https://index.docker.io/
+
+https://dseasb33srnrn.cloudfront.net/
+
+https://production.cloudflare.docker.com/
