@@ -11,5 +11,7 @@ remove the following files:
 ### Missing video thumnail
 
 ```
-sudo pacman -S ffmpegthumbs
+sudo pacman -S ffmpegthumbs kdegraphics-thumbnailers
 ```
+
+Then navigate to Dolphin configuration and enable thumnail for movies and PDF files or other extensions
