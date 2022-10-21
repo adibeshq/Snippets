@@ -1,0 +1,14 @@
+[Unit]
+Description=Dropbox (rclone)
+AssertPathIsDirectory=/home/{user_name}/Dropbox
+After=lighttpd.service
+
+[Service]
+Type=simple
+User=mohamad
+ExecStart=/usr/local/bin/rclonesyncservice Dropbox: /home/{user_name}/Dropbox /home/{user_name}/.config/rclone/rclone.conf
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

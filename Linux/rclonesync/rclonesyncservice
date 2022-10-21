@@ -1,0 +1,9 @@
+#!/bin/bash
+
+while [[ true ]] ; do
+
+        /usr/bin/rclone bisync --resync --config=$3 $1 $2
+        sleep 60
+
+        # going back to the beginning
+done
