@@ -21,3 +21,11 @@ Then add the following line to `~/.zshrc`:
 ```
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
+
+### Open file with default app with one command
+Add below lines to the `~/.zshrc` file
+```bash
+function open () {
+  xdg-open "$@">/dev/null 2>&1
+}
+```
