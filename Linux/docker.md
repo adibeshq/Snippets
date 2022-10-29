@@ -45,3 +45,17 @@ https://index.docker.io/
 https://dseasb33srnrn.cloudfront.net/
 
 https://production.cloudflare.docker.com/
+
+
+## Make docker use socks proxy for pulling images
+
+On Arch edit the following file:
+```
+/usr/lib/systemd/system/docker.service
+```
+
+```bash
+[Service]
+Environment="HTTP_PROXY=socks5://ip:port"
+Environment="HTTPS_PROXY=socks5://ip:port"
+```
