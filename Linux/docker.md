@@ -59,3 +59,10 @@ On Arch edit the following file:
 Environment="HTTP_PROXY=socks5://ip:port"
 Environment="HTTPS_PROXY=socks5://ip:port"
 ```
+
+Running the following command are necessary afterwards:
+
+```bash
+systemctl daemon-reload
+systemctl restart docker
+```
