@@ -48,3 +48,82 @@ watch kubectl get pods -n calico-system
 kubectl taint node master-node node.kubernetes.io/not-ready:NoSchedule-
 kubectl taint node master-node node-role.kubernetes.io/control-plane:NoSchedule-
 ```
+
+
+## Install Nginx ingress
+This steps requires for assigning domains to kubernetes apps
+```bash
+helm repo add nginx-stable https://helm.nginx.com/stable
+helm repo update
+helm install nginx-ingress nginx-stable/nginx-ingress -n kube-system
+```
+
+## Install certificat manager
+```bash
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.10.0/cert-manager.crds.yaml
+helm install cert-manager jetstack/cert-manager --namespace kube-system  --create-namespace
+```
+
+## Install openebs Jiva volume provisioner
+```bash 
+helm repo add openebs https://openebs.github.io/charts
+helm repo update 
+helm install openebs --namespace kube-system openebs/openebs --create-namespace
+kubectl apply -f https://openebs.github.io/charts/jiva-operator.yaml 
+```
+
+# Create storage class
+apply below configs using kubectl
+
+```yaml
+apiVersion: openebs.io/v1alpha1
+ kind: JivaVolumePolicy
+ metadata:
+   name: jiva-volume-policy
+   namespace: openebs
+ spec:
+   replicaSC: openebs-hostpath
+   target:
+     replicationFactor: 1
+     # disableMonitor: false
+     # auxResources:
+     # tolerations:
+     # resources:
+     # affinity:
+     # nodeSelector:
+     # priorityClassName:
+   # replica:
+     # tolerations:
+     # resources:
+     # affinity:
+     # nodeSelector:
+     # priorityClassName:
+```
+
+```yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: openebs-jiva
+provisioner: jiva.csi.openebs.io
+allowVolumeExpansion: true
+parameters:
+  cas-type: "jiva"
+  policy: "jiva-volume-policy"
+```
+
+
+## Make Jiva default
+```bash
+kubectl patch storageclass openebs-jiva -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
+
+
+## Install Prometheus & Metrics
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm install prometheus prometheus-community/prometheus  -n kube-system
+```
