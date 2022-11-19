@@ -30,14 +30,18 @@ For finding the key codes install and run `xev`
 
 
 
-Shortcuts:
+__Shortcuts__:
 
+___
 Window one desktop to the left + right
 
 Window one desktop up+down
 
+___
 
-
-Switch one desktop to the left+right
+one desktop to the left+right
 
 Switch one desktop up+down 
+
+
+> Sample shortcut schema is included that can be imported from Settings > Keyboard shortcuts (Compatible with Mac Keyboard)
