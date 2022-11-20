@@ -66,3 +66,41 @@ Running the following command are necessary afterwards:
 systemctl daemon-reload
 systemctl restart docker
 ```
+---
+
+## Relocate docker files to free more space on root dir
+
+- Stop the docker
+```bash
+sudo systemctl stop docker
+```
+- Add a file to `/etc/docker`
+
+```bash
+sudo vi /etc/docker/daemon.json
+```
+- Add the following lines to the file
+
+```javascript
+{
+  "data-root": "/path/to/your/docker"
+}
+```
+- Copy the files
+```bash
+sudo rsync -aP /var/lib/docker/ /path/to/your/docker
+```
+
+- Backup current files:
+```bash
+sudo mv /var/lib/docker /var/lib/docker.old
+```
+- Start the service:
+```bash
+sudo systemctl start docker
+```
+- Test if everything works well
+- Remove the redundant files:
+```bash
+sudo rm -rf /var/lib/docker.old
+```
