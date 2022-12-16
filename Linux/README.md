@@ -1,2 +1,2 @@
 1. Arch Linux
-  - [Pacman Tricks](./linux-tricks.md) 
+    - [Pacman Tricks](./pacman-tricks.md) 
