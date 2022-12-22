@@ -5,7 +5,7 @@
 2. Arch Linux
     - [Pacman Tricks](./pacman-tricks.md)
 2. Awesome
-    - [Applications](./awesome-applications.md)
+    - [Applications](./awesome/applications.md)
     
     
 
