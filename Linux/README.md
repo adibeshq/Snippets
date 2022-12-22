@@ -8,7 +8,7 @@
     - [Tips](./Arch/ArchTips.md)
     - [Pacman Tricks](./Arch/pacman-tricks.md)
 2. Awesome
-    - [Applications](./awesome/applications.md)
+    - [Applications](./Awesome/applications.md)
 3. KDE Desktop
     - [Keyboard](./KDE/keyboard.md)
     - [Misc](./KDE/Misc.md)
