@@ -14,5 +14,7 @@
     - [Misc](./KDE/Misc.md)
 4. Network
     - [Clear DNS Cache](./Network/clear-dns-cache.md)
+    - [Sniff TCP and extact ips](./sniff-TCP-and-extract-IPs.md)
+    - [Remove batch routes](remove-batch-routes.md)
     
 
