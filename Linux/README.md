@@ -12,5 +12,7 @@
 3. KDE Desktop
     - [Keyboard](./KDE/keyboard.md)
     - [Misc](./KDE/Misc.md)
+4. Network
+    - [Clear DNS Cache](./Network/clear-dns-cache.md)
     
 
