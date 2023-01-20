@@ -17,9 +17,9 @@ ZSH_THEME="jonathan"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 ```
 
-Then add the following line to `~/.zshrc`:
+Then:
 ```bash
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 ```
 ---
 ### Syntax-Highlighting :
@@ -31,7 +31,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 then run:
 
 ```bash
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+echo "source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
 ```
 ---
 ### Open file with default app with one command :
