@@ -6,31 +6,33 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 You can also change the theme. Replace the theme name in `~/.zshrc`. For example:
 
-```
+```bash
 ZSH_THEME="jonathan"
 ```
 
 ---
 ### Auto-Suggestion:
 
-```
+```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 ```
 
 Then add the following line to `~/.zshrc`:
-```
+```bash
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
 ---
 ### Syntax-Highlighting :
 
-```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 ```
 
-then add zsh-syntax-highlighting to plugin section in `~/.zshrc` file 
-after that run command `source .zshrc`
+then run:
 
+```bash
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+```
 ---
 ### Open file with default app with one command :
 Add below lines to the `~/.zshrc` file
