@@ -1,3 +1,4 @@
+## Mirgration of the repo
 * git clone --mirror: to clone every references (commits, tags, branches)
 * git push --mirror: to push everything
 
@@ -12,4 +13,8 @@ git remote set-url --push origin https://github.com/exampleuser/mirrored
 git push --mirror
 ```
 
- 
+## Store credential
+
+```
+git config --global credential.helper store
+```
