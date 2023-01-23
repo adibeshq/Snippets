@@ -1,4 +1,4 @@
-## Mirgration of the repo
+## Mirgration of a repo
 * git clone --mirror: to clone every references (commits, tags, branches)
 * git push --mirror: to push everything
 
