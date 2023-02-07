@@ -24,12 +24,21 @@ Then navigate to Dolphin configuration and enable thumnail for movies and PDF fi
 
 1. Install window buttons plasma applet
   ```bash
-  pacman -S plasma5-applets-window-buttons`
+  sudo pacman -S plasma5-applets-window-buttons`
   ```
 2. Add `Window Title Applet widget` to top menu bar
 
 3. Remove title bar for maximized window
   ```bash
-  kwriteconfig5 --file ~/.config/kwinrc --group Windows --key BorderlessMaximizedWindows true qdbus org.kde.KWin /KWin reconfigure
+  kwriteconfig5 --file ~/.config/kwinrc --group Windows --key BorderlessMaximizedWindows true && qdbus org.kde.KWin /KWin reconfigure
   ```
   > latte-dock will reset this setting i don't know why we can lock the config file after running `kwriteconfig5` by `chattr +i ~/.config/kwinrc`
+
+4. To make the global menu available for gtk applications install the following packages:
+
+```bash
+sudo pacman -S appmenu-gtk-module libappindicator-gtk3 libdbusmenu-gtk3
+```
+
+5. Right click on Window buttons to make and open its settings.
+6. Set the `Show` to `last active windows is maximized`
