@@ -42,3 +42,6 @@ sudo pacman -S appmenu-gtk-module libappindicator-gtk3 libdbusmenu-gtk3
 
 5. Right click on Window buttons to make and open its settings.
 6. Set the `Show` to `last active windows is maximized`
+
+---
+install `appimagelauncher` to install appimage files. (I dont know how to remove the installed package)
