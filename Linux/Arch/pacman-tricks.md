@@ -13,3 +13,8 @@ pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | paste - - | column -t |
 ```bash
 sudo pacman -R $(pacman -Qdtq)
 ```
+### Invalid signiture:
+
+```bash
+pacman-key --populate archlinux
+```
