@@ -32,8 +32,9 @@ Then navigate to Dolphin configuration and enable thumnail for movies and PDF fi
   ```bash
   kwriteconfig5 --file ~/.config/kwinrc --group Windows --key BorderlessMaximizedWindows true && qdbus org.kde.KWin /KWin reconfigure
   ```
-  > latte-dock will reset this setting i don't know why we can lock the config file after running `kwriteconfig5` by `chattr +i ~/.config/kwinrc`
+  > latte-dock will reset this setting i don't know why we can lock the config file after running `kwriteconfig5` by `chattr +i ~/.config/kwinrc`. 
 
+> :warning: By running this command your System Settings will be no longer changable. So you need to run `chattr -i ~/.config/kwinrc` once you want to make modifications.
 4. To make the global menu available for gtk applications install the following packages:
 
 ```bash
