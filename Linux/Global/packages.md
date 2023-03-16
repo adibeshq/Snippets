@@ -52,3 +52,5 @@ cmake
 peek
 gimp
 webfsd
+go
+plumber
