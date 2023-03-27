@@ -40,3 +40,9 @@ Then you need to push the new histroy into the repo
 ```bash
 git push --mirror --force
 ```
+
+## Download specific directory from a Github repo
+
+Install [GitZip for github](https://chrome.google.com/webstore/detail/gitzip-for-github/ffabmkklhbepgcgfonabamgnfafbdlkn) chrome extension
+
+Then check the checkbox besite any directory you want to download then click the bottom right download button. 
