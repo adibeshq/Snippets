@@ -18,3 +18,25 @@ git push --mirror
 ```
 git config --global credential.helper store
 ```
+
+## Find and sort files in git history
+
+```bash
+git rev-list --objects --all |
+  git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' |
+  sed -n 's/^blob //p' |
+  sort --numeric-sort --key=2 |
+  cut -c 1-12,41- |
+  $(command -v gnumfmt || echo numfmt) --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
+```
+
+## Remove files from git history
+
+```bash
+git filter-repo --invert-paths --path Post.Core.WebApi/certificate.xml --force
+```
+Then you need to push the new histroy into the repo
+
+```bash
+git push --mirror --force
+```
